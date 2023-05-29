@@ -1,0 +1,7 @@
+{% ckan_extends %}
+{% block styles %}
+  {{ super() }}
+  {% set theme = h.get_rtl_theme() if h.is_rtl_language() else g.theme %}
+  {% asset theme %}
+  {% asset 'test/test_styles' %}
+{% endblock %}
