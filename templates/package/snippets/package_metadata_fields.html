@@ -2,7 +2,7 @@
 
 {% block package_metadata_fields %}
 
-  {% block package_metadata_fields_url %}
+{% block package_metadata_fields_url %}
     {{ form.input('url', label=_('Source'), id='field-url', placeholder=_('http://example.com/dataset.json'), value=data.url, error=errors.url, classes=['control-medium']) }}
   {% endblock %}
 
@@ -23,12 +23,12 @@
   {% endblock %}
 
   {% block package_metadata_fields_custom %}
-    {% block custom_fields %}
-      {% snippet 'snippets/custom_form_fields.html', extras=data.extras, errors=errors, limit=3 %}
+    {% block custom_fields %} 
+      {% snippet 'snippets/custom_form_fields.html', extras=data.extras, errors=errors, limit=10 %}
     {% endblock %}
   {% endblock %}
 
   {% block dataset_fields %}
-  {% endblock %}
+  {% endblock %} 
 
 {% endblock %}

@@ -69,12 +69,13 @@ def organizations():
     organizations = func({},{"all_fields":True})
     return organizations
 
-class TestPlugin(plugins.SingletonPlugin):
+class TestPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.IAuthFunctions)
     plugins.implements(plugins.ITemplateHelpers)
+
 
     # IConfigurer
     def update_config(self, config_):
@@ -105,3 +106,4 @@ class TestPlugin(plugins.SingletonPlugin):
     #ITemplate
     def get_helpers(self):
         return {"test_most_popular_groups":most_popular_groups, "test_organizations":organizations}
+    

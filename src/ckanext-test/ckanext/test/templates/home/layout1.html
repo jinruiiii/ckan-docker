@@ -1,3 +1,8 @@
 {% ckan_extends %}
 
+{% block featured_organization %}
+{% snippet 'organization/snippets/organization_list.html', organizations=h.test_organizations()%}
+{% endblock %}
 
+{% block featured_group %}
+{% snippet 'group/snippets/group_%}
