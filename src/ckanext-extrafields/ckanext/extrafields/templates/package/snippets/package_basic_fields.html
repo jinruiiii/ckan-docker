@@ -1,5 +1,6 @@
 {% ckan_extends %}
 
 {% block package_basic_fields_custom %}
-  {{ form.input('custom_text', label=_('Custom Text'), id='field-custom_text', placeholder=_('custom text'), value=data.custom_text, error=errors.custom_text, classes=['control-medium']) }}
+  {{ form.input('who', label=_('Who'), id='field-who', placeholder=_('Who'), value=data.who, error=errors.who, classes=['control-medium']) }}
+  {{ form.input('what', label=_('What'), id='field-what', placeholder=_('What'), value=data.what, error=errors.what, classes=['control-medium']) }}
 {% endblock %}

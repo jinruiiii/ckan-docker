@@ -2,6 +2,6 @@
 
 {% block basic_fields_url %}
 {{ super() }}
-
-  {{ form.input('custom_resource_text', label=_('Custom Text'), id='field-custom_resource_text', placeholder=_('custom resource text'), value=data.custom_resource_text, error=errors.custom_resource_text, classes=['control-medium']) }}
+  {{ form.input('who', label=_('Who'), id='field-who', placeholder=_('who'), value=data.who, error=errors.who, classes=['control-medium']) }}
+  {{ form.input('what', label=_('What'), id='field-what', placeholder=_('what'), value=data.what, error=errors.what, classes=['control-medium']) }}
 {% endblock %}

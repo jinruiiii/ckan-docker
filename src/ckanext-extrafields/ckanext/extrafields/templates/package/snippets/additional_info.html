@@ -1,10 +1,16 @@
 {% ckan_extends %}
 
 {% block extras %}
-  {% if pkg_dict.custom_text %}
+  {% if pkg_dict.who %}
     <tr>
-      <th scope="row" class="dataset-label">{{ _("Custom Text") }}</th>
-      <td class="dataset-details">{{ pkg_dict.custom_text }}</td>
+      <th scope="row" class="dataset-label">{{ _("Who") }}</th>
+      <td class="dataset-details">{{ pkg_dict.who }}</td>
+    </tr>
+  {% endif%}
+  {% if pkg_dict.what %}
+    <tr>
+      <th scope="row" class="dataset-label">{{ _("What") }}</th>
+      <td class="dataset-details">{{ pkg_dict.what }}</td>
     </tr>
   {% endif %}
 {% endblock %}

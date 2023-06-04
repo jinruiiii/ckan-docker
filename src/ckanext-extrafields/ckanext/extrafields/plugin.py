@@ -36,7 +36,11 @@ class ExtrafieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         schema = super(ExtrafieldsPlugin, self).create_package_schema()
         # our custom field
         schema.update({
-            'custom_text': [toolkit.get_validator('ignore_missing'),
+            'who': [toolkit.get_validator('ignore_missing'),
+                            toolkit.get_converter('convert_to_extras')]
+        })
+        schema.update({
+            'what': [toolkit.get_validator('ignore_missing'),
                             toolkit.get_converter('convert_to_extras')]
         })
         return schema
@@ -45,7 +49,11 @@ class ExtrafieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         schema = super(ExtrafieldsPlugin, self).update_package_schema()
         # our custom field
         schema.update({
-            'custom_text': [toolkit.get_validator('ignore_missing'),
+            'who': [toolkit.get_validator('ignore_missing'),
+                            toolkit.get_converter('convert_to_extras')]
+        })
+        schema.update({
+            'what': [toolkit.get_validator('ignore_missing'),
                             toolkit.get_converter('convert_to_extras')]
         })
         return schema
@@ -53,7 +61,11 @@ class ExtrafieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     def show_package_schema(self):
         schema = super(ExtrafieldsPlugin, self).show_package_schema()
         schema.update({
-            'custom_text': [toolkit.get_converter('convert_from_extras'),
+            'who': [toolkit.get_converter('convert_from_extras'),
+                            toolkit.get_validator('ignore_missing')]
+        })
+        schema.update({
+            'what': [toolkit.get_converter('convert_from_extras'),
                             toolkit.get_validator('ignore_missing')]
         })
         return schema   
